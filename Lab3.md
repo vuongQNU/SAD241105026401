@@ -11,7 +11,7 @@
 
 ### PrintService Subsystem
 #### Mô tả: Hệ thống con PrintService hỗ trợ tạo và in báo cáo lương, danh sách nhân viên nhận lương.
-![Package Diagram]([[https://www.planttext.com/api/plantuml/png/R9192iCm34NtFeKka0jaKGBT5sEVm2HACNX8PJcGitNH8_KATQRI8Jlp_Vv3qlF-Q18RukoTC2r70cacYixfAJ5wC0catd_81aPQCYM4r52Trb0ZZRR56ZI63eOv0i9RniJY4rWAQiEws6QFXUoBU-dOS1LIGVMdFSVGM_ARkOr-SCWsXX_vtDCrN2BRVdeheIp8EHqFhDOfDtDvPzpvGxUaEDeEl_WEsLYNH5Esck_u0W00__y30000](https://www.planttext.com/api/plantuml/png/Z95DQiCm48NtEiLSm1VmeXYoyQeOwGIAF0A1v557uu3FbaMEb2jKmau83RJTQjxtVj3zUXkAM9OrHMMT4CDaDwOOpLO44zW2apakepPYlMzlerPgCj1zmCHX4ODy2GvxCEiv1O6yUq1kHs3yMh68UfK-KUHAuJB3RCM2hp4Fc34J7nGoT6zX9rfyu7IaE4eveWHQVWGrplJmIHByTeZBwXoMejIetqVelIzWDQGDiJKgCUIT_MF6Gzlc_AVxg_Ml6qRTLm-wXFbPI0qriVtSDm000F__0m00)](https://www.planttext.com/api/plantuml/png/R9192iCm34NtFeKka0jaKGBT5sEVm2HACNX8PJcGitNH8_KATQRI8Jlp_Vv3qlF-Q18RukoTC2r70cacYixfAJ5wC0catd_81aPQCYM4r52Trb0ZZRR56ZI63eOv0i9RniJY4rWAQiEws6QFXUoBU-dOS1LIGVMdFSVGM_ARkOr-SCWsXX_vtDCrN2BRVdeheIp8EHqFhDOfDtDvPzpvGxUaEDeEl_WEsLYNH5Esck_u0W00__y30000)
+![Package Diagram](https://www.planttext.com/api/plantuml/png/Z95DQiCm48NtEiLSm1VmeXYoyQeOwGIAF0A1v557uu3FbaMEb2jKmau83RJTQjxtVj3zUXkAM9OrHMMT4CDaDwOOpLO44zW2apakepPYlMzlerPgCj1zmCHX4ODy2GvxCEiv1O6yUq1kHs3yMh68UfK-KUHAuJB3RCM2hp4Fc34J7nGoT6zX9rfyu7IaE4eveWHQVWGrplJmIHByTeZBwXoMejIetqVelIzWDQGDiJKgCUIT_MF6Gzlc_AVxg_Ml6qRTLm-wXFbPI0qriVtSDm000F__0m00)
 #### Giải thích:
 
 #### PayrollSystem: Gửi yêu cầu in báo cáo đến PrintService.
@@ -27,5 +27,32 @@
 #### ProjectManagementDatabase: Lưu trữ dữ liệu liên quan đến dự án, nhân viên, và lương.
 
 ## 2.Analysis Class to Design Element Map
+| Analysis Class         | Design Element            |
+|------------------------|---------------------------|
+| Employee               | Employee Entity           |
+| Payroll                | Payroll Processor Service |
+| Bank Transaction       | Bank Transaction Adapter  |
+| PrintRequest           | PrintRequest Queue        |
+| Project                | Project Entity            |
+| SalaryReportGenerator  | ReportGenerator Component |
+
 ## 3.Design Element to Owning Package Map
+| Design Element           | Owning Package            |
+|--------------------------|---------------------------|
+| Employee Entity          | EmployeeManagement Package|
+| Payroll Processor Service| PayrollProcessor Package  |
+| Bank Transaction Adapter | BankIntegration Package   |
+| PrintRequest Queue       | PrintService Package      |
+| Project Entity           | ProjectManagement Package |
+| ReportGenerator Component| Reporting Package         |
+
+
 ## 4.Architectural Layers and Their Dependencies
+![Package Diagram](https://www.planttext.com/api/plantuml/png/V9512i8m44NtFSNGVQyWhIWYL2Y21nZYKA9f4f9qKSIJkV18Ni6qO9kcwlRF_oz_9g_7CxSEZMiRaMXaLwm9qigG9UdGSIMXn8vC2hS4W0cq5YhiZ1BYjFTASa-cMA6ruEn_gZAAaRNAZ8CZQMNSZYGPT5uFYUlMSkdjKAgQioLqssYXEg83Ik-VcFwL2p7taKFa1Xr2mTX0_SNhErdkstGnCfXuwdWAoBBLSiLO65nnvw-cQ84eC-C4ZUQf41IOSfBd_hVV0000__y30000)
+#### Giải thích:
+
+#### Presentation Layer: Giao diện người dùng, ví dụ: PayrollUI.
+#### Application Layer: Chứa logic ứng dụng như PayrollProcessor, ReportGenerator.
+#### Business Logic Layer: Xử lý nghiệp vụ, quản lý nhân viên và dự án.
+#### Data Access Layer: Giao tiếp với cơ sở dữ liệu thông qua các repository.
+
