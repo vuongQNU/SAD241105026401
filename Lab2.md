@@ -1,4 +1,4 @@
-# Lab 2
+# Analysis Payroll System.
 
 ## 1. Phân tích ca sử dụng:
 
