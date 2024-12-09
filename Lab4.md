@@ -124,6 +124,115 @@ IBankSystem --> BankSystem : 1.1.7.1 send transaction()
 #### 1.2.3.1 Run Payroll-VOPC
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/Z5NDRjGm4BxdAKQzi22sPQyh90ehfFRKLSiBJEqfiTO_aUrGHT0duy0ZyGhOJkBQsHmu9VxcypUVPvp9tzz_hfr7wtibc-OD72Gw1u-crnpjqB2qV1YS9tMGXfrkjIVxX8pWPmDmTGLfy-Pjyp9nZpXO8-N1Q1-VP6UYxJLqOx2aMn4LpsIxY1UyBwXFeusSc3I7nm23jwWTCY-CtlYMWWFM4Zl17kRNzn3mA76hdqmK9Us57-3Yg-ga6OWk01tCYvG1D2gAJvfHmUCoPHH19YwSOG9biC9w6_Lqhnx9nWXoRicv-DgrHbCH8eL2fW0EAXW1HRurV3oLS17cE7mAXq_8T_8H0bIXANw15llBI3PPWi6ZZNGl536qUGD3oNg9FXPkKnO7larCIEN9grIUrlJMmREn9-BJOQ0ZA-Q3EFn1PVOvQsMhxtZ8Mpegii_DIybpKrFoiHQJVKj1O_CiV3lXfSfDi2c7giqrz7eQETm7eUpu9aELhGUKQ0NnId89JYwrxb6cs91bFnTW9NmmIWddmYLUYAy5nWGiHohdnzwo5XtTMKxM5KquLFmgUxLdh7Y9p1zTxEJnRkxXIvmOznJkJf1qhUXSipegjjlpiR27tNRNd4-Bo5tEX3rykBpSmJOzrlSKy-4_sCM8UEM-M-VcajVS30TA_ZB2eTRYHRhp-CTVWR6uauleyderP_SjqTOkIhDwUwAdghtPsAvfhiDWZN-3Vm000F__0m00)
 
+
+// code 
+@startuml
+
+package Model {
+    class SystemClockInterface {
+        // start()
+    }
+    
+    class Naming {
+        + lookup()
+    }
+    
+    class IPayrollController {
+        + run payroll()
+    }
+    class PayrollController {
+        + runPayroll()
+    }
+    
+    class UnicastRenoteObject {
+        # UnicastRenoteObject()
+        + clone()
+        + exportObject()
+    }
+    
+    interface PrinterInterface {
+        + print(paycheck: Paycheck)
+    }
+
+    interface IBankSystem {
+        + deposit()
+    }
+
+    entity Employee {
+        + name: String
+        + employeeId: int
+        + bankInfo: BankInformation
+        + socialSecurityNumber: String
+        + address: String
+        + phoneNumber: String
+        + email: String
+        + paymentMethod: String
+        // isPayday(): bool
+        // getPayAmount(): float
+        // getPaymentMethod(): String
+        // getBankInfo(): BankInformation
+        // getCurrentTimecard(): Timecard
+        // calculatePay(): float
+    }
+
+    entity Paycheck {
+        + amount: float
+        // create(amount: float)
+    }
+
+    entity HourlyEmployee {
+        + hourlyRate: float
+        // getHourlyRate(): float
+    }
+
+   entity SalariedEmployee {
+        + annualSalary: float
+        // getAnnualSalary(): float
+    }
+
+    entity Timecard {
+        + hoursWorked: float
+        + payPeriod: String
+        // save()
+        // getTimecardInfo(): String
+        // updateTimecard(hours: float)
+    }
+
+    entity CommissionedEmployee {
+        + commissionRate: float
+        // getPurchaseOrders(): List<PurchaseOrder>
+        // getCommissionRate(): float
+    }
+
+    entity PurchaseOrder {
+        // getPoInfo(): String
+    }
+
+    class BankInformation {
+        + bankName: String
+        + accountNumber: String
+        + routingNumber: String
+    }
+}
+SystemClockInterface -->  Naming 
+SystemClockInterface --> IPayrollController 
+
+
+PayrollController --|> Naming
+PayrollController --|> UnicastRenoteObject
+PayrollController "0..1" --> "0..1" PrinterInterface :  +paycheckPriter
+PayrollController "0..1" -->  "0..1"IBankSystem : direct deposits check via
+PayrollController "0..*" --> "0..1" Employee 
+
+Employee "1" --> "0..*" Paycheck 
+Employee <|-- HourlyEmployee
+Employee <|-- SalariedEmployee
+SalariedEmployee <|-- CommissionedEmployee
+Employee "1" --> "0..*"  Timecard 
+CommissionedEmployee "1" --> "0..*" PurchaseOrder 
+
+@enduml
+
 ### SystemClockInterface : kiểu boundary
 ### PrinterInterface : kiểu boundary
 ### BankSystem : kiểu boundary
