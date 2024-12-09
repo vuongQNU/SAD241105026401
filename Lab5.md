@@ -3,7 +3,7 @@
 ### 1.1 Use-Case Realization-Run Payroll
 #### 1.1.1 Run Payroll(with ss interface)
 Run Payroll- Basic Flow(with ss interface)
-![Package Diagram](https://www.planttext.com/api/plantuml/png/Z9HBRiCW48Rtd09bPKlj1RfeeaPTT9L8xGKccDGe62myLkMpTT4ZzGe56sp0YPgLDJFVpppbt--VNOTWi6ya8S1G6xfv7phapLvgTjbGw6XaazQoWeaM50QGZX7wff2RCp2UQ-P0AZx2OBIKUwtGVRaPTIjlAdfjMga7FkK8HefyY8OpCDM812DBtHjMGyVfmLGXhtUDdbMXhEP-5i7842DSazaCl7Vfty_N-sE6L81mSYLjNa1T_FX6mjcJ6VGHaMLSs2KfYLP17v-lReO-qV4AYf9S3LlPQZ7KYaolQ3i5h7IDM5rOagL5v-0AXcBxF_p9qT4K6jqhLzWSirnOg-Smc4ATTOOcY_NyyJ2HsnIDiZEGh9U0t9PvgxDm2WuttBB5by3Q5tntWmst1zHmh7LrCr5sHrRSEbSHAh2w75baCtrVIITtN7wEL_dbnjpLS5LD4ZIWEdkWGgkvheVbjP94kkILv0ZTS_5B9I4xwtD_fpy0003__mC0)
+![Package Diagram](https://www.planttext.com/api/plantuml/png/Z9HBJiCm48RtESMegrQ2IAL09HPGKR5WrKfmWQdZ4gkn7JcEKCx6WYDn1Mp7piDffQwY6V_Vl9M_dzzDfL7fcXS94YqLp3wQIbE-BIGvpG0h6DX9QQICi1A53a9mB_0kD5L793HckeSnlCT6oQBOIg7jboh7JRnZw8sNXMnecoCOOyaduvIWofma657gMf4SAmexbOMytkKyaq99JlqiWX595BDDHZFmthv_Fr_l7sgI33KUR4cpLnGdFpwdi7Ph1dwWY3BssZvfCbW5t3wVtGmymJ85TmVpHN9MOSZ9RXncG5KBADj7WqzbXWsxyiWIM6MH39ihYJluejeYW5pMmjRPAOowstIGcnGMqC7Dn576p6Zf7TXcskzQv2LYuhBI5H0iI5sWfllBtOIxyTWg1QAeGURVJEU-fUi6SHy6mQavFKvrBhEBMQCBz24UKYZjopnKPV1OsTCTj0pOTOK-fgxIWxrMF_spM7-q7boRKwGYQqcjK5Jcy9aKNRatVT15Ci17mUAcrxP-5tSOSf5iZCl-_Fu1003__mC0)
 
 ---
 Run Payroll- Basic Flow(with ss interface)
@@ -16,7 +16,7 @@ Run Payroll- VOPC (with ss interface)
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/Z5NDRjGm4BxdAKQzi22sPQyh90ehfFRKLSiBJEqfiTO_aUrGHT0duy0ZyGhOJkBQsHmu9VxcypUVPvp9tzz_hfr7wtibc-OD72Gw1u-crnpjqB2qV1YS9tMGXfrkjIVxX8pWPmDmTGLfy-Pjyp9nZpXO8-N1Q1-VP6UYxJLqOx2aMn4LpsIxY1UyBwXFeusSc3I7nm23jwWTCY-CtlYMWWFM4Zl17kRNzn3mA76hdqmK9Us57-3Yg-ga6OWk01tCYvG1D2gAJvfHmUCoPHH19YwSOG9biC9w6_Lqhnx9nWXoRicv-DgrHbCH8eL2fW0EAXW1HRurV3oLS17cE7mAXq_8T_8H0bIXANw15llBI3PPWi6ZZNGl536qUGD3oNg9FXPkKnO7larCIEN9grIUrlJMmREn9-BJOQ0ZA-Q3EFn1PVOvQsMhxtZ8Mpegii_DIybpKrFoiHQJVKj1O_CiV3lXfSfDi2c7giqrz7eQETm7eUpu9aELhGUKQ0NnId89JYwrxb6cs91bFnTW9NmmIWddmYLUYAy5nWGiHohdnzwo5XtTMKxM5KquLFmgUxLdh7Y9p1zTxEJnRkxXIvmOznJkJf1qhUXSipegjjlpiR27tNRNd4-Bo5tEX3rykBpSmJOzrlSKy-4_sCM8UEM-M-VcajVS30TA_ZB2eTRYHRhp-CTVWR6uauleyderP_SjqTOkIhDwUwAdghtPsAvfhiDWZN-3Vm000F__0m00)
  
  ----
- #### 1.1.1 Run Payroll(with Security)
+ #### 1.1.2 Run Payroll(with Security)
  Run Payroll - Basic Flow ( with security)
 
 đây là sơ đồ cộng tác giống như Run Payroll 
@@ -26,5 +26,13 @@ Có quyền truy cập mở vào tất cả dữ liệu an toàn của Nhân vi�
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/Z9HBJiCm48RtFiMegqO2f88G4Wkeg5XqrKZb0fRZjbOTEx8TKCx6WYDn1Vp8vDLKOjNCpF_D_9uw-Vt-MLj7ZQjBIGXbJXjOx1lhU0aRgTbv0TH2IiGODRaHod4Jo-qpbjweEhT8B8SuXOGmhPpH4cV4bji07oZZqrbTeSToslXVkKcnH0FJR0ziexazDv-Y7J3A484plBGtceH3urmvuPfeW9ruknSCkceWjkgWJKcTqAex_Y3NTweDEr7BTwR0OmmpdUv3b9nHKqG91btrlQoaRdWw6WQ43BO8jxSlirk5PrZTGVptbncPLGJqOhcHMu6f5LIfvd5oAGimEagCfuGDK46RPVRwF-OUZjm526YfQnMyTeeWnvMWt0y9WCEqyBkVCgDDTs2QbE_caVarUEm169MibjJnF9phsYxmjhIWnmpt37m9TyAp7QIcBhlIO7HpsowFK8Na4flVmDxvn34ZOtKqaDvJ9FsY4dlLyU0DQA4dA7YbhHWEd5nmFtc0XJQNNVneorK1pb1b_MV3Oy75skV2X-WF003__mC0)
 
  ---
+
+  Run Payroll - VOPC ( with security)
+đây là VOPC cộng tác giống như Run Payroll 
+
+![Package Diagram](https://www.planttext.com/api/plantuml/png/Z5NDRjGm4BxdAKQzi22sPQyh90ehfFRKLSiBJEqfiTO_aUrGHT0duy0ZyGhOJkBQsHmu9VxcypUVPvp9tzz_hfr7wtibc-OD72Gw1u-crnpjqB2qV1YS9tMGXfrkjIVxX8pWPmDmTGLfy-Pjyp9nZpXO8-N1Q1-VP6UYxJLqOx2aMn4LpsIxY1UyBwXFeusSc3I7nm23jwWTCY-CtlYMWWFM4Zl17kRNzn3mA76hdqmK9Us57-3Yg-ga6OWk01tCYvG1D2gAJvfHmUCoPHH19YwSOG9biC9w6_Lqhnx9nWXoRicv-DgrHbCH8eL2fW0EAXW1HRurV3oLS17cE7mAXq_8T_8H0bIXANw15llBI3PPWi6ZZNGl536qUGD3oNg9FXPkKnO7larCIEN9grIUrlJMmREn9-BJOQ0ZA-Q3EFn1PVOvQsMhxtZ8Mpegii_DIybpKrFoiHQJVKj1O_CiV3lXfSfDi2c7giqrz7eQETm7eUpu9aELhGUKQ0NnId89JYwrxb6cs91bFnTW9NmmIWddmYLUYAy5nWGiHohdnzwo5XtTMKxM5KquLFmgUxLdh7Y9p1zTxEJnRkxXIvmOznJkJf1qhUXSipegjjlpiR27tNRNd4-Bo5tEX3rykBpSmJOzrlSKy-4_sCM8UEM-M-VcajVS30TA_ZB2eTRYHRhp-CTVWR6uauleyderP_SjqTOkIhDwUwAdghtPsAvfhiDWZN-3Vm000F__0m00)
+ 
+#### 1.1.2 Run Payroll(with Distribution)
+ Run Payroll - Basic Flow ( with security)
 
  
