@@ -31,7 +31,46 @@
 
 ### 1.1.3 Run Payroll
 #### 1.1.3.1 Run Payroll - Basic Flow
+
 ![Package Diagram](https://www.planttext.com/api/plantuml/png/Z9HBRiCW48Rtd09bPKlj1RfeeaPTT9L8xGKccDGe62myLkMpTT4ZzGe56sp0YPgLDJFVpppbt--VNOTWi6ya8S1G6xfv7phapLvgTjbGw6XaazQoWeaM50QGZX7wff2RCp2UQ-P0AZx2OBIKUwtGVRaPTIjlAdfjMga7FkK8HefyY8OpCDM812DBtHjMGyVfmLGXhtUDdbMXhEP-5i7842DSazaCl7Vfty_N-sE6L81mSYLjNa1T_FX6mjcJ6VGHaMLSs2KfYLP17v-lReO-qV4AYf9S3LlPQZ7KYaolQ3i5h7IDM5rOagL5v-0AXcBxF_p9qT4K6jqhLzWSirnOg-Smc4ATTOOcY_NyyJ2HsnIDiZEGh9U0t9PvgxDm2WuttBB5by3Q5tntWmst1zHmh7LrCr5sHrRSEbSHAh2w75baCtrVIITtN7wEL_dbnjpLS5LD4ZIWEdkWGgkvheVbjP94kkILv0ZTS_5B9I4xwtD_fpy0003__mC0)
+
+---
+![Package Diagram](https://www.planttext.com/api/plantuml/png/Z9HBJiCm48RtFiMegqO2f88G4Wkeg5XqrKZb0fRZjbOTEx8TKCx6WYDn1Vp8vDLKOjNCpF_D_9uw-Vt-MLj7ZQjBIGXbJXjOx1lhU0aRgTbv0TH2IiGODRaHod4Jo-qpbjweEhT8B8SuXOGmhPpH4cV4bji07oZZqrbTeSToslXVkKcnH0FJR0ziexazDv-Y7J3A484plBGtceH3urmvuPfeW9ruknSCkceWjkgWJKcTqAex_Y3NTweDEr7BTwR0OmmpdUv3b9nHKqG91btrlQoaRdWw6WQ43BO8jxSlirk5PrZTGVptbncPLGJqOhcHMu6f5LIfvd5oAGimEagCfuGDK46RPVRwF-OUZjm526YfQnMyTeeWnvMWt0y9WCEqyBkVCgDDTs2QbE_caVarUEm169MibjJnF9phsYxmjhIWnmpt37m9TyAp7QIcBhlIO7HpsowFK8Na4flVmDxvn34ZOtKqaDvJ9FsY4dlLyU0DQA4dA7YbhHWEd5nmFtc0XJQNNVneorK1pb1b_MV3Oy75skV2X-WF003__mC0)
+code từ plantext
+@startuml
+
+actor "System Clock" as SystemClock
+actor "Printer" as Printer
+actor "Bank System" as BankSystem
+
+control "SystemClockInterface" as SystemClockInterface
+control "PayrollController" as PayrollController
+control "IPrintService" as IPrintService
+interface "IBankSystem" as IBankSystem
+
+entity "Paycheck" as Paycheck
+entity "BankInformation" as BankInformation
+entity "PurchaseOrder" as PurchaseOrder
+entity "Timecard" as Timecard
+entity "Employee" as Employee
+
+SystemClock --> SystemClockInterface : 1. start()
+SystemClockInterface --> PayrollController : 1.1 run payroll()
+
+PayrollController --> Employee : 1.1.1 is payday()?
+PayrollController --> Employee : 1.1.2 get pay amount()
+Employee --> Timecard : 1.1.2.1 get timecard info()
+Employee --> PurchaseOrder : 1.1.2.2 get PO info()
+Employee --> PayrollController : 1.1.2.3 calculatePay()
+
+PayrollController --> Paycheck : 1.1.3 create with amount(float)
+PayrollController --> IPrintService : 1.1.5 print(Paycheck, String)
+IPrintService --> Printer : 1.1.5.1 print()
+
+PayrollController --> IBankSystem : 1.1.7 deposit(Paycheck, BankInformation)
+IBankSystem --> BankSystem : 1.1.7.1 send transaction()
+
+@enduml
 
 #### 1.1.3.2 Run Payroll - Basic Flow
 
